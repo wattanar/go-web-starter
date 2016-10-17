@@ -4,7 +4,7 @@ import (
   "net/http"
   "log"
   "github.com/julienschmidt/httprouter"
-  c "github.com/wattanar/go-web-starter/controllers"
+  c "./controllers"
 )
 
 func main()  {
@@ -13,7 +13,7 @@ func main()  {
 
   r.GET("/", c.Index)
   
-  r.NotFound = http.StripPrefix("/static/", http.FileServer(http.Dir("./assets/")))
+  r.NotFound = http.StripPrefix("/assets/", http.FileServer(http.Dir("./static/")))
   
   log.Fatal(http.ListenAndServe(":8080", r))
 }
