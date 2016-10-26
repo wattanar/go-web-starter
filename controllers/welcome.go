@@ -6,7 +6,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-func Index(res http.ResponseWriter, req *http.Request, _ httprouter.Params) {
+func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	t, _ := template.ParseFiles("views/base.tmpl", "views/index.tmpl")
-	t.Execute(res, nil)
+	t.Execute(w, nil)
 }
