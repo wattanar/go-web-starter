@@ -8,12 +8,8 @@ import (
 )
 
 func main()  {
-
   r := httprouter.New()
-
   r.GET("/", c.Index)
-  
   r.NotFound = http.StripPrefix("/assets/", http.FileServer(http.Dir("./static/")))
-  
   log.Fatal(http.ListenAndServe(":8080", r))
 }
