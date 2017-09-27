@@ -8,8 +8,8 @@ import (
 )
 
 func main()  {
-  r := httprouter.New()
-  r.GET("/", c.Index)
-  r.NotFound = http.StripPrefix("/dist/", http.FileServer(http.Dir("./dist/")))
-  log.Fatal(http.ListenAndServe(":8080", r))
+  router := httprouter.New()
+  router.GET("/", c.Index)
+  router.NotFound = http.StripPrefix("/public/", http.FileServer(http.Dir("./static/")))
+  log.Fatal(http.ListenAndServe(":8000", router))
 }
