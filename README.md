@@ -1,3 +1,5 @@
-# golang-web-sample
-- clone and get dep
-- run at :8080
+# Usage
+```
+go get github.com/julienschmidt/httprouter
+go run main.go
+```
