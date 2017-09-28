@@ -13,8 +13,8 @@ func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 }
 
 func main()  {
-  router := httprouter.New()
-  router.GET("/", Index)
-  router.NotFound = http.StripPrefix("/public/", http.FileServer(http.Dir("./static/")))
-  log.Fatal(http.ListenAndServe(":8000", router))
+	router := httprouter.New()
+	router.GET("/", Index)
+	router.NotFound = http.StripPrefix("/public/", http.FileServer(http.Dir("./static/")))
+	log.Fatal(http.ListenAndServe(":8000", router))
 }
