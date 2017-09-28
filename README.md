@@ -1,5 +1,5 @@
 # Usage
 ```
-go get github.com/julienschmidt/httprouter
+glide install
 go run main.go
 ```
